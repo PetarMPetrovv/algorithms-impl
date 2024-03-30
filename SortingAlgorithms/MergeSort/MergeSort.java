@@ -14,15 +14,12 @@ public class MergeSort {
 
     void merge(int arr[], int l, int m, int r) {
 
-        // find out the sizes of the two subarrays that are going to be merged.
         int n1 = m - l + 1;
         int n2 = r - m;
 
-        // Create temporary arrays
         int L[] = new int[n1];
         int R[] = new int[n2];
 
-        // Copy all elements into temporary arrays
         for (int i = 0; i < n1; ++i) {
             L[i] = arr[l + i];
         }
@@ -31,9 +28,8 @@ public class MergeSort {
             R[j] = arr[m + 1 + j];
         }
 
-        // Merge temporary arrays
-        int i = 0, j = 0; // starting indexes of array L and R
-        int k = l; // starting index of merged sub-arrays
+        int i = 0, j = 0;
+        int k = l;
 
         while (i < n1 && j < n2) {
 
@@ -50,7 +46,6 @@ public class MergeSort {
             k++;
         }
 
-        // copy the elements which are remaining in L sub-array.
         while (i < n1) {
 
             arr[k] = L[i];
@@ -58,7 +53,6 @@ public class MergeSort {
             k++;
         }
 
-        // copy the elements which are remaining in R sub-array.
         while (j < n2) {
 
             arr[k] = R[j];
@@ -71,10 +65,10 @@ public class MergeSort {
 
         if (l < r) {
 
-            int m = (l + r) / 2; // find middle index of an array
-            sort(arr, l, m); // sort left sub-array
-            sort(arr, m + 1, r); // sort right sub-array
-            merge(arr, l, m, r); // merge both sorted sub-arrays
+            int m = (l + r) / 2;
+            sort(arr, l, m);
+            sort(arr, m + 1, r);
+            merge(arr, l, m, r);
         }
     }
 }

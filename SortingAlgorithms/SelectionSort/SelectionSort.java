@@ -16,21 +16,17 @@ public class SelectionSort {
         int n = arr.length;
 
 
-        //  Loop for each iteration
         for (int i = 0; i < n - 1; i++) {
             int min_idx = i;
 
 
-            // Loop to find index of minimum element for ith index in each iteration
             for (int j = i + 1; j < n; j++) {
 
-                // Check for the minimum element in each iteration.
                 if (arr[j] < arr[min_idx]) {
                     min_idx = j;
                 }
             }
 
-            // put that minimum element at ith index using temp variable
             int temp = arr[i];
             arr[i] = arr[min_idx];
             arr[min_idx] = temp;
